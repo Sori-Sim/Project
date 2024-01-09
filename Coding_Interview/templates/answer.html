@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Answer{% endblock %}
+{% block style %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/answer.css') }}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="page">
+    {% if answer %}
+    <h1 id="green">Your answer is correct!!</h1>
+        <img class="pic" src="{{url_for('static', filename='image/Correct.png')}}">
+    {% else %}
+    <h1 id="red">You got the wrong answer...</h1>
+        <img class="pic" src="{{url_for('static', filename='image/Wrong.png')}}">
+    {% endif %}
+    <h2>Your output is : {{ user }}</h2>
+    <h2>Expected output is : {{ expected }}</h2>
+</div>
+{% endblock %}

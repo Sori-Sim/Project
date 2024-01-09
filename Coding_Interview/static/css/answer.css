@@ -1,0 +1,39 @@
+/* page start */
+
+.page {
+    height: 600px;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pic {
+    height: 300px;
+    width: auto;
+    margin: 25px 0;
+}
+
+.page h1 {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 60px;
+}
+
+.page h2 {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+}
+
+#green {
+    color: green;
+}
+
+#red {
+    color: red;
+}
+

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}Questions{% endblock %}
+{% block style %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/question.css') }}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<script>
+    // JavaScript function to handle button click and retrieve h3 value
+    function getH3Value() {
+        var h3Value = document.querySelector('.card h3').textContent;
+        alert('The h3 value is: ' + h3Value);
+        // You can now send this value to the server using AJAX if needed
+    }
+</script>
+<div class="page">
+    <h1>QUESTION</h1>
+    <h4>Click the study button to practice the question</h4>
+    <div id="divider-page"></div>
+    <img id="logo" src="{{url_for('static', filename='image/logo.png')}}">
+</div>
+
+<script>
+    const jsonData = JSON.parse('{{ jsondata|tojson }}');
+
+    for (var i = 0; i < 66; i++) {
+        document.write(`
+            <div class="card_bar">
+                <div class="card">
+                    <div class="title">
+                        <h3>${jsonData[i]['id']}</h3>
+                        <h4 class="${jsonData[i]['level'].toLowerCase()}">${jsonData[i]['level']}</h4>
+                    </div>
+                    <h6>${jsonData[i]['question']}</h6>
+                    <div class="study">
+                        <button class="study-btn" data-id="${jsonData[i]['id']}" onclick="sendData()">Study</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="title">
+                        <h3>${jsonData[i+1]['id']}</h3>
+                        <h4 class="${jsonData[i+1]['level'].toLowerCase()}">${jsonData[i+1]['level']}</h4>
+                    </div>
+                    <h6>${jsonData[i+1]['question']}</h6>
+                    <div class="study">
+                        <button class="study-btn" data-id="${jsonData[i+1]['id']}" onclick="sendData()">Study</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="title">
+                        <h3>${jsonData[i+2]['id']}</h3>
+                        <h4 class="${jsonData[i+2]['level'].toLowerCase()}">${jsonData[i+2]['level']}</h4>
+                    </div>
+                    <h6>${jsonData[i+2]['question']}</h6>
+                    <div class="study">
+                        <button class="study-btn" data-id="${jsonData[i+2]['id']}" onclick="sendData()">Study</button>
+                    </div>
+                </div>
+            </div>
+        `);
+
+        // Increment i by 2 to skip the next two elements in the loop
+        i += 2;
+    }
+
+    function sendData(button) {
+        var id = button.getAttribute('data-id');
+        let select = { 'id': id };
+        const request = new XMLHttpRequest();
+        request.open('POST', '/likecode');
+        request.setRequestHeader('Content-Type', 'application/json'); // Set the correct Content-Type header
+        request.onload = () => {
+            if (request.status === 200) {
+                const flaskMessage = request.responseText;
+                console.log(flaskMessage);
+
+                // Redirect to likecode.html with the id as a query parameter
+                window.location.href = '/likecode?id=' + id;
+            } else {
+                console.error('Error:', request.status);
+            }
+        };
+        request.send(JSON.stringify(select)); // Serialize the data to JSON format
+    }
+
+    var studyButtons = document.querySelectorAll('.study-btn');
+    studyButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            sendData(button); // Pass the clicked button element to sendData function
+        });
+    });
+</script>
+{% endblock %}

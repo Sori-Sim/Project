@@ -1,0 +1,43 @@
+/* page start */
+
+.page {
+    height: fit-content;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.page h1 {
+    color: #000000;
+    height: 20px;
+}
+
+.page h4 {
+    color: #707070;
+    height: 20px;
+}
+
+#divider-page {
+    height: 1px;
+    width: 100%;
+    background-color: #000000;
+}
+
+#info_title {
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: left;
+    font-size: 35px;
+    height: 20px;
+    width: 70%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#info {
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: left;
+    height: fit-content;
+    width: 70%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

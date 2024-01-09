@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        {% block style %}<link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">{% endblock %}
+        <script src="https://kit.fontawesome.com/bf6c1c73b1.js" crossorigin="anonymous"></script>
+        <script src="{{url_for('static', filename='javascript/logout.js')}}" type="module"></script>
+    </head>
+    <body>
+        <header class="header-main">
+            <a class="header-logo" href="{{url_for('index')}}"><img src="{{url_for('static', filename='image/logo.png')}}"></a>
+            <h1>WEB TEAM PROJECT</h1>
+            <nav class="header-nav">
+                <label><a href="{{url_for('index')}}"><i class="fa-solid fa-house" id="{% if request.endpoint == 'index' %}chose{% endif %}"></i></a></label>
+                <label><a href="{{url_for('member')}}"><i class="fa-solid fa-people-group" id="{% if request.endpoint == 'member' %}chose{% endif %}"></i></a></label>
+                <label><a href="{{url_for('question')}}"><i class="fa-solid fa-graduation-cap" id="{% if request.endpoint == 'question' %}chose{% endif %}"></i></a></label>
+                <label><a href="{{url_for('login')}}" id="logout"><i class="fa-solid fa-user" id="{% if request.endpoint == 'login' %}chose{% endif %}"></i></a></label>
+            </nav>
+            
+        </header>
+        {% block content %}
+        
+        {% endblock %}
+        <footer class="footer">
+            <div id="divider-footer"></div>
+            <p>©copyright 2023, Likecode</p>
+        </footer>
+    </body>
+</html>

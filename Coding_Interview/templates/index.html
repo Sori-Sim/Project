@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block style %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="page">
+    <h1>HOME</h1>
+    <h4>Welcome to our esteemed website project, where we invite you to embark on a comprehensive exploration of our platform.</h4>
+    <div id="divider-page"></div>
+    <h2>University of Alabama at Birmingham</h2>
+    <h3>CS421 & CS621 Adv Web Application Dev</h3>
+    <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='image/logo.png') }}"></a>
+    <h1 id="info_title">Project Info：</h1>
+    <p id="info">
+        "LikeCode" is a dynamic website designed to assist students in their interview preparation by providing a platform for practicing LeetCode problems. With the goal of enabling success in coding interviews, LikeCode offers a diverse collection of coding challenges, specifically curated to enhance problem-solving skills and algorithmic thinking. Students can leverage the website's interactive coding environment to practice and refine their coding abilities, gaining confidence in tackling real-world coding problems commonly encountered in interviews. With comprehensive explanations and hints accompanying each problem, LikeCode aims to support students in their learning journey and help them excel in their interview performance.
+    </p>
+</div>
+{% endblock %}

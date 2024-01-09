@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<!-- Reference: https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=simple-registration-form -->
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+        <meta charset="utf-8">
+        <title>Sign up</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/signup.css')}}">
+        <script src="https://kit.fontawesome.com/bf6c1c73b1.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header class="header-main">
+            <img class="header-logo" src="{{url_for('static', filename='image/logo.png')}}">
+        </header>
+
+        <div class="signup-form">
+            <form action="{{ url_for('signup') }}" method="post">
+                <h2>Register</h2>
+                <p class="hint-text">
+                    Create your 
+                    <a href="{{ url_for('login') }}">
+                        <img class="logo" src="{{url_for('static', filename='image/logo.png')}}">
+                    </a> 
+                    account
+                </p>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col"><input type="text" class="form-control" name="first_name"
+                            placeholder="First Name" required="required">
+                        </div>
+                        <div class="col"><input type="text" class="form-control" name="last_name" placeholder="Last Name"
+                            required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+                </div>
+                <!-- Password field with the password hint -->
+                <div class="form-group">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+                </div>
+                <!-- Confirm Password field with the hint -->
+                <div class="form-group">
+                    <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password"
+                        required="required" title="• It must identical with the password">
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+                </div>
+            </form>
+            <div class="text-center">Already have an account? <a href="{{ url_for('login') }}"><text color: #999> Sign in</a></div>
+        </div>
+        
+        <footer class="footer">
+            <div id="divider-footer"></div>
+            <p>©copyright 2023, Likecode</p>
+        </footer>
+    </body>
+</html>

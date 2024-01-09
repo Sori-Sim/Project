@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    background-color: #f3f2ef;
+}
+
+a {
+    cursor: pointer;
+}
+
+/* header start */
+
+.header-main {
+    width: 100%;
+    height: 60px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    margin-right: 5%;
+    height: 100%;
+}
+
+.header-nav a {
+    margin: 0;
+    padding: 0 10px;
+    color: rgb(110, 110, 110);
+}
+
+.header-nav a:hover,
+#chose:hover {
+    color: rgb(0, 0, 0);
+}
+
+#chose {
+    color: white;
+    background-color: gray;
+    border-radius: 30%;
+}
+
+.fa-user,
+.fa-house,
+.fa-people-group,
+.fa-graduation-cap {
+    line-height: 60px;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.header-main h1 {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+}
+
+.header-logo {
+    width: 20%;
+    margin-left: 5%;
+    height: 100%;
+    display: inline-block;
+}
+
+.header-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    /* Adjust the values to fit your needs */
+    .header-nav {
+        width: 30%;
+    }
+    .fa-user,
+    .fa-house,
+    .fa-people-group,
+    .fa-graduation-cap {
+        font-size: 20px;
+    }
+    .header-main h1 {
+        font-size: 30px;
+    }
+    .header-logo {
+        width: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust the values to fit your needs */
+    .header-nav {
+        width: 40%;
+    }
+    .fa-user,
+    .fa-house,
+    .fa-people-group,
+    .fa-graduation-cap {
+        font-size: 18px;
+    }
+    .header-main h1 {
+        font-size: 25px;
+    }
+    .header-logo {
+        width: 40%;
+    }
+}
+
+
+
+/* footer start */
+
+.footer {
+    height: 50px;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+.footer p {
+    color: #000000;
+    height: 20px;
+}
+
+#divider-footer {
+    height: 1px;
+    width: 100%;
+    background-color: #000000;
+}

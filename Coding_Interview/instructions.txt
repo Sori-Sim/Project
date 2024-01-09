@@ -1,0 +1,7 @@
+Instructions to run the file:
+1. go to python file named project.py
+2. make sure you have all necessary python libraries
+3. run the file
+4. copy the localhost link from the terminal and paste it onto the web 
+browser
+

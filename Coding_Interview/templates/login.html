@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<!-- Reference:  https://bootsnipp.com/snippets/dldxB  -->
+<html lang="en">
+
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <meta charset="utf-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+        <script src="https://kit.fontawesome.com/bf6c1c73b1.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header class="header-main">
+            <img class="header-logo" src="{{url_for('static', filename='image/logo.png')}}">
+        </header>
+
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+
+                <!-- Icon -->
+                <div class="fadeIn first">
+                    <img class="logo" src="{{url_for('static', filename='image/logo.png')}}">
+                </div>
+
+                <!-- Login Form -->
+                <form action="{{ url_for('login') }}" method="post">
+                    <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" style="height:50px;">
+                    <br>
+                    <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" style="width: 85%; height: 50px; text-align: center;">
+                    <br>
+                    <input type="submit" class="fadeIn fourth" value="Log In" style="width: 50%; height: 50px; text-align:center;" >
+                </form>
+
+                <div class="flash-messages">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <p>
+                                {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </p>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                
+                <div id="formFooter">
+                    <p>Not a member yet?</p><a class="underlineHover" href="{{ url_for('signup') }}">Join LIKECODE Now!</a>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div id="divider-footer"></div>
+            <p>©copyright 2023, Likecode</p>
+        </footer>
+    </body>
+</html>

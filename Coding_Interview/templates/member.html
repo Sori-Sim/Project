@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %}Members{% endblock %}
+{% block style %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/member.css') }}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="page">
+    <h1>MEMBERS</h1>
+    <h4>Roles of each member involved</h4>
+    <div id="divider-page"></div>
+</div>
+
+<!-- Felix Tien -->
+<div class="item_odd">
+    <div class="item_odd_right">
+        <h1 class="name">Felix Tien</h1>
+        <p>
+            Hello, my name is Nai-Wu Tien, but everyone calls me Felix. 
+            As a new graduate student, my ideas originated from interview preparation. 
+            The proposed project aims to replicate the functionality of the LeetCode platform by 
+            presenting optimal solutions alongside corresponding questions. In terms of my role, 
+            I actively participated in discussions about optimal solutions with my team members and 
+            designed connections between pages and data. Additionally, I was responsible for 
+            designing the introduction page, and member page.
+        </p>
+        <div class="item_odd_right_inside">
+            <button onclick="window.open('index.html', '_blank')">Portfolio</button>
+            <a href="https://www.linkedin.com/in/felix-tien/" target="_blank"><div></div></a>
+        </div>
+    </div>
+    <div class="item_odd_left">
+        <img src="{{url_for('static', filename='image/member/Felix.png')}}">
+    </div>
+</div>
+
+<!-- Annie -->
+<div class="item_even">
+    <div class="item_even_right">
+        <img src="{{url_for('static', filename='image/member/Annie.png')}}">
+    </div>
+    <div class="item_even_left">
+        <h1 class="name">Annie Wu</h1>
+        <p>
+            Hi, my name is Annie Wu. 
+            In the project, my responsibility was to provide optimal solutions 
+            by extracting valuable insights from YouTube videos as references for various Leetcode problems. 
+            I utilized a range of tools and algorithms while considering time and space complexities. 
+            Additionally, I collaborated with Felix and Jay to generate the JSON file, 
+            with the purpose of finalizing the coding page and correcting functions.
+        </p>
+        <div class="item_even_left_inside">
+            <button>Portfolio</button>
+            <a href="https://www.linkedin.com/in/annie-wu-752195263" target="_blank"><div></div></a>
+        </div>
+    </div>
+</div>
+
+<!-- Jay Chin -->
+<div class="item_odd">
+    <div class="item_odd_right">
+        <h1 class="name">Jay Chin</h1>
+        <p>
+            Hi, my name is Jay Chin and I am a Computer Science student at UAB.
+            As part of the project, my responsibility entails 
+            implementing the online IDE for python and assisting with other languages. To achieve 
+            this functionality, I utilized flask to handle the various python libraries. Additionally, I am responsible for the 
+            front page’s introduction and member's page. 
+            
+        </p>
+        <div class="item_odd_right_inside">
+            <button>Portfolio</button>
+            <a href="https://www.linkedin.com/in/jay-chin/" target="_blank"><div></div></a>
+        </div>
+    </div>
+    <div class="item_odd_left">
+        <img src="{{url_for('static', filename='image/member/Jay.png')}}">
+    </div>
+</div>
+
+<!-- Howard -->
+<div class="item_even">
+    <div class="item_even_right">
+        <img src="{{url_for('static', filename='image/member/Howard.png')}}">
+    </div>
+    <div class="item_even_left">
+        <h1 class="name">Howard Yu</h1>
+        <p>
+            Hello, my name is Howard Yu. I do the online IDE part for C++ and C. 
+            Use by creating a text box for users type in their code and run button 
+            to use python to run the code and then get the output in the output box.  
+            Then it'll see if the output and the answer are the same.
+            </p>
+        <div class="item_even_left_inside">
+            <button>Portfolio</button>
+            <a href="https://www.linkedin.com/in/cheng-hao-yu-5a532223b/" target="_blank"><div></div></a>
+        </div>
+    </div>
+</div>
+
+<!-- Sori Sim -->
+<div class="item_odd">
+    <div class="item_odd_right">
+        <h1 class="name">Sori Sim</h1>
+        <p>
+            Hello, My name is Sori Sim, and my role in this project is to 
+            handle the Java online IDE. I take care of user Login and Registration 
+            functionalities for user experience. Additionally, I'm responsible for 
+            crafting the project proposal, outlining its objectives and crucial 
+            details.  
+        </p>
+        <div class="item_odd_right_inside">
+            <button>Portfolio</button>
+            <a href="https://www.linkedin.com/in/sori-sim-42651b256/" target="_blank"><div></div></a>
+        </div>
+    </div>
+    <div class="item_odd_left">
+        <img src="{{url_for('static', filename='image/member/Sori.png')}}">
+    </div>
+</div>
+{% endblock %}

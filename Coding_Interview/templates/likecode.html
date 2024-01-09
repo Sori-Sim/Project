@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block title %}Likecode{% endblock %}
+{% block style %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/likecode.css') }}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="page">
+    <div class="hint">
+        <h2>{{jsondata[id]['id']}}. {{jsondata[id]['question']}}</h2>
+        <div class="title">
+            <h2 class="{{jsondata[id]['level']}}">{{jsondata[id]['level']}}</h2>
+            <a href="{{jsondata[id]['youtube']}}" target="_blank"><div></div></a>
+        </div>
+        <p id="detail-content">
+            {% for i in jsondata[id]['detail'] %}
+                {{ i }}<br>
+            {% endfor %}
+        </p>
+        <h3>Example:</h3>
+        <div class="example">
+            <h3>Input: {{jsondata[id]['input']}}</h3>
+            <h3>Output: {{jsondata[id]['output']}}</h3>
+        </div>
+        <h3>Hint:</h3>
+        <div class="example">
+            <h3>Tool:</h3>
+            <p>{{jsondata[id]['tool']}}</p>
+            <h3>Algrithm:</h3>
+            <p>
+                {% for a in jsondata[id]['algorithm'] %}
+                    ● {{ a }}<br>
+                {% endfor %}
+            </p>
+            <h3>Time Complexity:</h3>
+            <p>{{jsondata[id]['complexity']}}</p>
+        </div>
+        <h3>IDE Reference:</h3>
+        <div class="example">
+            <h3>Python:</h3>
+            <p>print("Hello World!")</p>
+            <h3>Java:</h3>
+            <p>class Main{</p>
+                <div class="indention"><p>public static void main(String args[]){</p></div>
+                    <div class="indention"><div class="indention"><p>System.out.println("Hello World!");</p></div></div>
+                <div class="indention"><p>}</p></div>
+            <p>}</p>
+            <h3>C:</h3>
+            <p>#include &lt;stdio.h&gt;<br></p>
+            <p>int main(){</p>
+                <div class="indention"><p>printf("Hello World!");</p></div>
+                    <div class="indention"><p>return 0;</p></div>
+            <p>}</p>
+            <h3>C++:</h3>
+            <p>#include &lt;iostream&gt;<br></p>
+            <p>int main(){</p>
+                <div class="indention"><p>std::cout &lt;&lt; "Hello World!";<br></p></div>
+                <div class="indention"><p>return 0;<br></p></div>
+            <p>}</p>
+        </div>
+    </div>
+    <div class="ide">
+        <form method="POST">
+            <div class="tag">
+                {{ form.hidden_tag() }}
+            </div>
+            <select name="language" id="language">
+                <option value="python">Python</option>
+                <option value="java">Java</option>
+                <option value="c">C</option>
+                <option value="c++">C++</option>
+            </select>
+            {{ form.codeArea(style='height: 80vh; width: 49vw ') }} <br>
+            <div class="run-button">
+                {{ form.runButton() }}
+            </div>
+            <div class="code-result">
+                {{ result }}
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Function to replace \n with <br> in the provided string
+    function newLine(str) {
+        return str.replace(/\\n/g, '<br>');
+    }
+
+    // Get the element containing jsondata[id]['detail'] and update its HTML content
+    const detailElement = document.getElementById('detail-content');
+    if (detailElement) {
+        detailElement.innerHTML = newLine(detailElement.innerHTML);
+    }
+</script>
+{% endblock %} 

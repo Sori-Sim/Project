@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    background-color: #f3f2ef;
+}
+
+body:after {
+    content: url(../image/Linkedin-color.png);
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+.name {
+    margin: 0;
+    font-size: 50px;
+    color: #000000;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* page start */
+
+.page {
+    height: 100px;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.page h1 {
+    color: #000000;
+    height: 20px;
+}
+
+.page h4 {
+    color: #707070;
+    height: 20px;
+}
+
+#divider-page {
+    height: 1px;
+    width: 100%;
+    background-color: #000000;
+}
+
+/* odd start */
+
+.item_odd {
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 20px;
+    height: fit-content;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.item_odd_right {
+    float: right;
+    height: 350px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item_odd_right p {
+    max-width: 80%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    size: 45px;
+}
+
+.item_odd_right_inside {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    justify-content: center;
+}
+
+.item_odd_right_inside button {
+    color: #6e6e6e;
+    margin: 0 10%;
+    background-color: rgb(125, 219, 172);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 4px;
+    font-weight: bold;
+    border-color: #ffffff;
+    border-width: 5px;
+}
+
+.item_odd_right_inside button:hover {
+    color: #000000;
+}
+
+.item_odd_right_inside div {
+    width: 120px;
+    height: 60px;
+    background-image: url(../image/Linkedin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+}
+
+.item_odd_right_inside div:hover {
+    background-image: url(../image/Linkedin-color.png);
+}
+
+.item_odd_left {
+    height: 350px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item_odd_left img {
+    max-height: 85%;
+    max-width: 85%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* even start */
+
+.item_even {
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 20px;
+    height: fit-content;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.item_even_right {
+    float: right;
+    height: 350px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item_even_right img {
+    max-height: 85%;
+    max-width: 85%;
+    display: block;
+    margin: 0 auto;
+}
+
+.item_even_left {
+    height: 350px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.item_even_left p {
+    max-width: 80%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    size: 45px;
+}
+
+.item_even_left_inside {
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    justify-content: center;
+}
+
+.item_even_left_inside button {
+    color: #6e6e6e;
+    margin: 0 10%;
+    background-color: rgb(125, 219, 172);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    height: fit-content;
+    width: fit-content;
+    margin-top: 4px;
+    font-weight: bold;
+    border-color: #ffffff;
+    border-width: 5px;
+}
+
+.item_even_left_inside button:hover {
+    color: #000000;
+}
+
+.item_even_left_inside div {
+    width: 120px;
+    height: 60px;
+    background-image: url(../image/Linkedin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+}
+
+.item_even_left_inside div:hover {
+    background-image: url(../image/Linkedin-color.png);
+}
